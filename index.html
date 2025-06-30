@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Decodificador de boletos bancários e documentos GNRE. Extraia informações de códigos de barras e linhas digitáveis de forma rápida e precisa.">
+    <meta name="keywords" content="boleto, GNRE, decodificador, banco, pagamento, código de barras, linha digitável">
+    <meta name="author" content="Jhonathan Ballesteros">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Decodificador de Boletos e GNRE">
+    <meta property="og:description" content="Ferramenta gratuita para decodificar boletos bancários e documentos GNRE. Extraia informações de códigos de barras e linhas digitáveis.">
+    <meta property="og:image" content="">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="Decodificador de Boletos e GNRE">
+    <meta property="twitter:description" content="Ferramenta gratuita para decodificar boletos bancários e documentos GNRE. Extraia informações de códigos de barras e linhas digitáveis.">
+    <meta property="twitter:image" content="">
+    
+    <title>Decodificador de Boletos e GNRE</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏦</text></svg>">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="src/css/styles.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="src/js/validators.js" as="script">
+    <link rel="preload" href="src/js/decoder.js" as="script">
+    <link rel="preload" href="src/js/ui.js" as="script">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🏦 Decodificador de Boletos e GNRE</h1>
+            <p>Extraia informações de boletos bancários e documentos de arrecadação (GNRE)</p>
+        </header>
+        
+        <main class="content">
+            <section class="input-section">
+                <div class="input-group">
+                    <label for="digitableLine">Linha Digitável (47 ou 48 dígitos):</label>
+                    <input 
+                        type="text" 
+                        id="digitableLine" 
+                        name="digitableLine"
+                        placeholder="Boleto: 10499.00001 00000.000001 00000.000000 0 00000000000100 | GNRE: 85660000001100000004772..."
+                        maxlength="60"
+                        autocomplete="off"
+                        spellcheck="false"
+                        title="Digite ou cole a linha digitável completa do boleto ou documento GNRE"
+                        required
+                    >
+                </div>
+                <button class="decode-button" type="button" title="Pressione Enter no campo acima ou clique neste botão para decodificar">
+                    🔍 Decodificar Documento
+                </button>
+            </section>
+            
+            <section id="results" class="results" style="display: none;" aria-live="polite">
+                <!-- Results will be dynamically inserted here -->
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/js/validators.js"></script>
+    <script src="src/js/decoder.js"></script>
+    <script src="src/js/ui.js"></script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Decodificador de Boletos e GNRE",
+        "description": "Ferramenta gratuita para decodificar boletos bancários e documentos GNRE brasileiros",
+        "url": "",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "BRL"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Jhonathan Ballesteros"
+        },
+        "featureList": [
+            "Decodificação de boletos bancários",
+            "Suporte a documentos GNRE",
+            "Validação de dígitos verificadores",
+            "Cálculo automático de datas de vencimento",
+            "Interface responsiva",
+            "Padrão FEBRABAN"
+        ]
+    }
+    </script>
+</body>
+</html>
